@@ -8,7 +8,6 @@ import 'style-loader!semantic-ui-css/semantic.min.css'
 
 import App from './App'
 
-
 firebase.initializeApp({
   apiKey: 'AIzaSyDxNOVMQ4RZrT1V0o4tK-xBS5lmrGbDnl8',
   authDomain: 'twitty-70e66.firebaseapp.com',
@@ -18,7 +17,6 @@ firebase.initializeApp({
 })
 
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
