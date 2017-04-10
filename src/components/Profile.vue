@@ -10,7 +10,7 @@
 
 
 <script>
-import firebase from 'firebase'
+import { User, Auth } from '@/services/index'
 export default {
   data: () => ({
     profile: {
@@ -19,12 +19,10 @@ export default {
     }
   }),
   created () {
-    const userId = firebase.auth().currentUser.uid
-    firebase.database()
-      .ref(`user/${userId}`)
-      .once('value', (data) => {
-        this.profile = data.val()
-      })
+    const userId = Auth.getCurrentUser().uid
+    User.get(userId, (data) => {
+      this.profile = data
+    })
   }
 }
 </script>
